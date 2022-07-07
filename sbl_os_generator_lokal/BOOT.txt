@@ -1,0 +1,16 @@
+# Container Layout File
+#
+#    Name ,  ImageFile      ,  CompAlg  ,  AuthType         ,  KeyFile                      ,  Alignment,  Size     , svn       
+# ========================================================================================================================
+  ( 'BOOT', 'sbl_os.bin'    , 'MULTIBOOT', 'RSA2048_PSS_SHA2_256', 'KEY_ID_CONTAINER_RSA2048'    , 0x10      , 0         , 0x0       ),
+  ( 'CMDL', 'CMDL.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x30      , 0x0       ),
+  ( 'ACRN', 'ACRN.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x574f0   , 0x0       ),
+  ( 'MOD0', 'MOD0.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x20      , 0x0       ),
+  ( 'MOD1', 'MOD1.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x11b010  , 0x0       ),
+  ( 'MOD2', 'MOD2.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x20      , 0x0       ),
+  ( 'MOD3', 'MOD3.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x100010  , 0x0       ),
+  ( 'MOD4', 'MOD4.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x20      , 0x0       ),
+  ( 'MOD5', 'MOD5.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x100010  , 0x0       ),
+  ( 'MOD6', 'MOD6.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x20      , 0x0       ),
+  ( 'MOD7', 'MOD7.bin'      , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x8b94b0  , 0x0       ),
+  ( '_SG_', ''              , 'Dummy'   , 'NONE'            , ''                            , 0x10      , 0x20      , 0x0       ),

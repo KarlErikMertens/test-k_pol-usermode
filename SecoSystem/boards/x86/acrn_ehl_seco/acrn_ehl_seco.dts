@@ -1,0 +1,216 @@
+/*
+ * Copyright (c) 2020 Intel Corporation
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+#include <mem.h>
+
+//#define DT_DRAM_SIZE		DT_SIZE_M(2048)
+#define DT_DRAM_SIZE		DT_SIZE_M(256)
+#define DT_DRAM_BASE		0
+
+#include <acrn_vm0_elkhart_lake.dtsi>
+
+/ {
+	model = "acrn_ehl_seco";
+	compatible = "acrn_ehl_seco";
+
+	aliases {
+		uart-0 = &uart0_leg;
+		uart-1 = &uart1_leg;
+	};
+
+	chosen {
+		zephyr,sram = &dram0;
+		zephyr,console = &uart0_leg;
+		zephyr,shell-uart = &uart0_leg;
+	};
+
+    pcie0 {
+		ivshmem0: ivshmem@800 {
+			compatible = "qemu,ivshmem";
+
+			reg = <PCIE_BDF(0,0x1,0) PCIE_ID(0x1af4,0x1110)>;
+//			reg = <PCIE_BDF_NONE PCIE_ID(0x1af4,0x1110)>;
+			label = "IVSHMEM_0";
+			status = "okay";
+		};
+		ivshmem1: ivshmem@1000 {
+			compatible = "qemu,ivshmem";
+
+			reg = <PCIE_BDF(0,0x2,0) PCIE_ID(0x1af4,0x1110)>;
+			label = "IVSHMEM_1";
+			status = "okay";
+		};
+		ivshmem2: ivshmem@1800 {
+			compatible = "qemu,ivshmem";
+
+			reg = <PCIE_BDF(0,0x3,0) PCIE_ID(0x1af4,0x1110)>;
+			label = "IVSHMEM";
+			status = "okay";
+		};
+		ivshmem3: ivshmem@2000 {
+			compatible = "qemu,ivshmem";
+
+			reg = <PCIE_BDF(0,0x4,0) PCIE_ID(0x1af4,0x1110)>;
+			label = "IVSHMEM_3";
+			status = "okay";
+		};
+    };
+
+    soc {
+		uart0_leg: uart@3f8 {
+			compatible = "ns16550";
+			reg = <0x000003f8 0x100>;
+			label = "UART_0_LEG";
+			clock-frequency = <1843200>;
+			interrupts = <4 IRQ_TYPE_LOWEST_EDGE_RISING 3>;
+			interrupt-parent = <&intc>;
+
+			status = "disabled";
+		};
+
+		uart1_leg: uart@2f8 {
+			compatible = "ns16550";
+			reg = <0x000002f8 0x100>;
+			label = "UART_1_LEG";
+			clock-frequency = <1843200>;
+			interrupts = <3 IRQ_TYPE_LOWEST_EDGE_RISING 3>;
+			interrupt-parent = <&intc>;
+
+			status = "disabled";
+		};
+    };
+};
+
+// enabled and modified devices
+&uart0_leg {
+	status = "okay";
+	current-speed = <115200>;
+};
+
+&uart1_leg {
+	status = "okay";
+	current-speed = <115200>;
+};
+
+&uart1_fixed {
+	status = "disabled";
+};
+
+&uart2_fixed {
+	status = "disabled";
+};
+
+&dram0 {
+	device_type = "memory";
+	reg = <DT_DRAM_BASE DT_DRAM_SIZE>;
+};
+
+// disabled devices
+&ibecc {
+    status = "disabled";
+};
+
+&uart0 {
+    status = "disabled";
+};
+
+&uart1 {
+    status = "disabled";
+};
+
+&uart2 {
+    status = "disabled";
+};
+
+&uart_pse_0 {
+    status = "disabled";
+};
+
+&uart_pse_1 {
+    status = "disabled";
+};
+
+&uart_pse_2 {
+    status = "disabled";
+};
+
+&uart_pse_3 {
+    status = "disabled";
+};
+
+&uart_pse_4 {
+    status = "disabled";
+};
+
+&uart_pse_5 {
+	status = "disabled";
+};
+
+&i2c0 {
+    status = "disabled";
+};
+
+&i2c1 {
+    status = "disabled";
+};
+
+&i2c2 {
+    status = "disabled";
+};
+
+&i2c3 {
+    status = "disabled";
+};
+
+&i2c4 {
+    status = "disabled";
+};
+
+&i2c5 {
+    status = "disabled";
+};
+
+&i2c6 {
+    status = "disabled";
+};
+
+&i2c7 {
+    status = "disabled";
+};
+
+&i2c_pse_0 {
+    status = "disabled";
+};
+
+&i2c_pse_1 {
+    status = "disabled";
+};
+
+&i2c_pse_2 {
+    status = "disabled";
+};
+
+&i2c_pse_3 {
+    status = "disabled";
+};
+
+&i2c_pse_4 {
+    status = "disabled";
+};
+
+&i2c_pse_5 {
+    status = "disabled";
+};
+
+&i2c_pse_6 {
+    status = "disabled";
+};
+
+&hpet {
+    status = "disabled";
+};

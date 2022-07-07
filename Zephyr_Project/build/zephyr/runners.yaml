@@ -1,0 +1,24 @@
+# Available runners configured by board.cmake.
+runners:
+- misc-flasher
+
+# Default flash runner if --runner is not given.
+flash-runner: misc-flasher
+
+# Common runner configuration values.
+config:
+  board_dir: /home/user/zephyrproject/ISI_Programme/isiApp/SecoSystem/boards/x86/acrn_ehl_seco
+  # Build outputs:
+  elf_file: zephyr.elf
+  bin_file: zephyr.bin
+  # Host tools:
+  gdb: /home/user/zephyr-sdk-0.13.2/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gdb
+  openocd: /home/user/zephyr-sdk-0.13.2/sysroots/x86_64-pokysdk-linux/usr/bin/openocd
+  openocd_search:
+    - /home/user/zephyr-sdk-0.13.2/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  misc-flasher:
+    []
+

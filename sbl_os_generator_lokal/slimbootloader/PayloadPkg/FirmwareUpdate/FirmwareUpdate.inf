@@ -1,0 +1,73 @@
+## @file
+#  Copyright (c) 2008 - 2018, Intel Corporation. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = FirmwareUpdate
+  FILE_GUID                      = E2E57F60-4C17-461e-92A2-E428DBB12D06
+  MODULE_TYPE                    = PEIM
+  VERSION_STRING                 = 1.0
+
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  FirmwareUpdateHelper.h
+  FirmwareUpdate.c
+  FirmwareUpdateHelper.c
+  GetCapsuleImage.c
+  CsmeFwUpdate.c
+  ErrorList.c
+  CmdFwUpdate.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  BootloaderCommonPkg/BootloaderCommonPkg.dec
+  PayloadPkg/PayloadPkg.dec
+  Platform/CommonBoardPkg/CommonBoardPkg.dec
+
+[LibraryClasses]
+  FirmwareUpdateLib
+  DebugLib
+  PrintLib
+  MemoryAllocationLib
+  PayloadEntryLib
+  BaseLib
+  BaseMemoryLib
+  ResetSystemLib
+  SecureBootLib
+  LiteFvLib
+  ConfigDataLib
+  ContainerLib
+  StringSupportLib
+
+[Guids]
+  gLoaderMemoryMapInfoGuid
+  gLoaderFspInfoGuid
+  gLoaderSystemTableInfoGuid
+  gEfiPartTypeSystemPartGuid
+  gFirmwareUpdateImageFileGuid
+  gFlashMapInfoGuid
+  gBootLoaderVersionFileGuid
+
+[Pcd]
+  gEfiMdePkgTokenSpaceGuid.PcdPciExpressBaseAddress
+  gPayloadTokenSpaceGuid.PcdPayloadHobList
+  gPlatformCommonLibTokenSpaceGuid.PcdAcpiPmTimerBase
+  gPayloadTokenSpaceGuid.PcdFwUpdStatusBase
+  gPayloadTokenSpaceGuid.PcdRsvdRegionBase
+  gPlatformCommonLibTokenSpaceGuid.PcdLowestSupportedFwVer
+  gPayloadTokenSpaceGuid.PcdCsmeUpdateEnabled
+  gPlatformCommonLibTokenSpaceGuid.PcdCompSignHashAlg
+
+[Depex]
+  TRUE

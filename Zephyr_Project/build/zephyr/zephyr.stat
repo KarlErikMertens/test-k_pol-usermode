@@ -1,0 +1,109 @@
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x1000
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          3367128 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         3
+  Size of section headers:           64 (bytes)
+  Number of section headers:         32
+  Section header string table index: 31
+
+Section Headers:
+  [Nr] Name              Type             Address           Offset
+       Size              EntSize          Flags  Link  Info  Align
+  [ 0]                   NULL             0000000000000000  00000000
+       0000000000000000  0000000000000000           0     0     0
+  [ 1] .locore           PROGBITS         0000000000001000  00000100
+       0000000000006000  0000000000000000 WAX       0     0     32
+  [ 2] text              PROGBITS         0000000000100000  00007000
+       000000000001a000  0000000000000000  AX       0     0     1
+  [ 3] initlevel         PROGBITS         000000000011a000  00021000
+       0000000000000120  0000000000000000   A       0     0     8
+  [ 4] devices           PROGBITS         000000000011a120  00021120
+       0000000000000150  0000000000000000   A       0     0     8
+  [ 5] app_shmem_regions PROGBITS         000000000011a270  00021270
+       0000000000000030  0000000000000000   A       0     0     16
+  [ 6] log_const_se[...] PROGBITS         000000000011a2a0  000212a0
+       0000000000000040  0000000000000000   A       0     0     16
+  [ 7] shell_area        PROGBITS         000000000011a2e0  000212e0
+       0000000000000060  0000000000000000   A       0     0     8
+  [ 8] shell_root_c[...] PROGBITS         000000000011a340  00021340
+       00000000000000e0  0000000000000000   A       0     0     16
+  [ 9] device_handles    PROGBITS         000000000011a420  00021420
+       000000000000002c  0000000000000000   A       0     0     2
+  [10] rodata            PROGBITS         000000000011a460  00021460
+       0000000000007cb0  0000000000000000   A       0     0     32
+  [11] app_smem          PROGBITS         0000000000122120  00029120
+       0000000000003ee0  0000000000000000  WA       0     0     32
+  [12] bss               NOBITS           0000000000126000  0002d000
+       0000000000096e50  0000000000000000  WA       0     0     32
+  [13] noinit            NOBITS           00000000001bd000  0002d000
+       0000000000424000  0000000000000000  WA       0     0     4096
+  [14] datas             PROGBITS         00000000005e1000  0002d000
+       0000000000000450  0000000000000000  WA       0     0     32
+  [15] device_states     PROGBITS         00000000005e1450  0002d450
+       000000000000001c  0000000000000000  WA       0     0     4
+  [16] k_heap_area       PROGBITS         00000000005e1470  0002d470
+       0000000000000060  0000000000000000  WA       0     0     8
+  [17] k_stack_area      PROGBITS         00000000005e14d0  0002d4d0
+       0000000000000038  0000000000000000  WA       0     0     8
+  [18] pagetables        PROGBITS         00000000005e1508  0002d508
+       0000000000103af8  0000000000000000   A       0     0     1
+  [19] kobject_data      PROGBITS         00000000006e5000  00131000
+       0000000000000640  0000000000000000  WA       0     0     32
+  [20] .comment          PROGBITS         0000000000000000  00131640
+       000000000000002e  0000000000000001  MS       0     0     1
+  [21] .debug_aranges    PROGBITS         0000000000000000  00131670
+       0000000000004360  0000000000000000           0     0     16
+  [22] .debug_info       PROGBITS         0000000000000000  001359d0
+       00000000000fc0b4  0000000000000000           0     0     1
+  [23] .debug_abbrev     PROGBITS         0000000000000000  00231a84
+       000000000001784d  0000000000000000           0     0     1
+  [24] .debug_line       PROGBITS         0000000000000000  002492d1
+       000000000003be55  0000000000000000           0     0     1
+  [25] .debug_frame      PROGBITS         0000000000000000  00285128
+       0000000000009438  0000000000000000           0     0     8
+  [26] .debug_str        PROGBITS         0000000000000000  0028e560
+       000000000000cc10  0000000000000001  MS       0     0     1
+  [27] .debug_loc        PROGBITS         0000000000000000  0029b170
+       0000000000068b90  0000000000000000           0     0     1
+  [28] .debug_ranges     PROGBITS         0000000000000000  00303d00
+       000000000001ba30  0000000000000000           0     0     1
+  [29] .symtab           SYMTAB           0000000000000000  0031f730
+       000000000000cdf8  0000000000000018          30   907     8
+  [30] .strtab           STRTAB           0000000000000000  0032c528
+       0000000000009a4d  0000000000000000           0     0     1
+  [31] .shstrtab         STRTAB           0000000000000000  00335f75
+       0000000000000161  0000000000000000           0     0     1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  l (large), p (processor specific)
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  LOAD           0x0000000000000100 0x0000000000001000 0x0000000000001000
+                 0x0000000000006000 0x0000000000006000  RWE    0x20
+  LOAD           0x0000000000007000 0x0000000000100000 0x0000000000100000
+                 0x0000000000026000 0x00000000004e1000  RWE    0x1000
+  LOAD           0x000000000002d000 0x00000000005e1000 0x00000000005e1000
+                 0x0000000000104640 0x0000000000104640  RW     0x20
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .locore 
+   01     text initlevel devices app_shmem_regions log_const_sections shell_area shell_root_cmds_sections device_handles rodata app_smem bss noinit 
+   02     datas device_states k_heap_area k_stack_area pagetables kobject_data 

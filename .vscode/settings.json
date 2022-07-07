@@ -1,0 +1,23 @@
+{
+  "files.associations": {
+    "zsmis.h": "c",
+    "stl_startup_commands.h": "c",
+    "z_vm_initializations.h": "c",
+    "stl_periodic_commands.h": "c",
+    "app_memdomain.h": "c",
+    "z_vm_partition_mapping.h": "c",
+    "z_vm_shm_data_structs.h": "c",
+    "odcc.h": "c",
+    "l_vm_timer.h": "c",
+    "z_treiber.h": "c",
+    "ivshmem.h": "c",
+    "l_vm_shm_data_structs.h": "c",
+    "z_time.h": "c",
+    "time.h": "c",
+    "z_shm_data_structs.h": "c",
+    "stdio.h": "c",
+    "syscall_handler.h": "c",
+    "sem.h": "c",
+    "device.h": "c"
+  }
+}
